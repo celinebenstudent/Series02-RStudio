@@ -1,5 +1,5 @@
 ---
-title: "A minimal notebook to analyse test data\n"
+title: "Series02-RStudio\n"
 author: "Denis MOTTET"
 date: "`r format(Sys.time(), '%d %B, %Y, %H:%M')`"
 output:
@@ -23,9 +23,11 @@ Download the file NonUse.csv from the course Moodle.
 
 This file contains measures of upper extremity nonuse:
 
-PANU: Proximal Arm Non Use
-SANU: Shoulder Antepulsion Non Use
-EENU: Elbow Extension Non Use
+
+-PANU: Proximal Arm Non Use
+-SANU: Shoulder Antepulsion Non Use
+-EENU: Elbow Extension Non Use
+
 In your notebook, make a clear description of the experiment, the variables and the data. Do not forget to give the units of each variable, and the range of possible values.
 
 ## Corelation analysis
@@ -43,10 +45,10 @@ Summarize your results as you would do in your master’s thesis report, or as i
 
 What are the limits of your analysis?
 
-2 Statistical tests: comparison of medians (or means?)
+# Statistical tests: comparison of medians (or means?)
 In this series of exercises, you will explore how to compare two groups of data, using non-parametric tests (or parametric tests… if it makes sense to do so).
 
-2.1 Make clear what is a statistical test, and when to use it.
+## Make clear what is a statistical test, and when to use it.
 Below are some questions to guide your analysis. You can answer them in your notebook, with a short sentence for each question.
 
 What is a median? A mean?
@@ -62,7 +64,7 @@ What is the risk of error when using a statistical test?
 What is the difference between a paired and an unpaired test?
 You can use your favorite LLM, book or web site to answer these questions, but you have to provide at least one reference for each answer (book, article, URL, LLM prompt, etc.).
 
-2.2 Effect of treatment over time
+## Effect of treatment over time
 This is a very classical question in clinical or sport research: does a treatment-training have an effect over time?
 
 To answer this question scientifically, measurements must be taken before and after treatment, and possibly later, in order to assess whether the effect is lasting or not.

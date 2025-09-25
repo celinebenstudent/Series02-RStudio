@@ -63,6 +63,19 @@ cor.test(nonuse$PANU, nonuse$SANU, method = "spearman")
 
 Visualize the PANU-SANU relationship (and the PANU-EENU relationship)
 
+```{r plot-sanu}
+library(ggplot2)
+ggplot(nonuse, aes(x = PANU, y = SANU)) +
+  geom_point() +
+  xlim(-100, 100) +
+  ylim(-100, 100) +
+  labs(title = "PANU vs SANU", x = "PANU (%)", y = "SANU (%)") +
+  theme_minimal()
+       
+       
+```
+       
+       
 Perform a linear regression for PANU-SANU (and for PANU-EENU)
 
 Give the regression equations: PANU = a * SANU + b and PANU = a * EENU + b

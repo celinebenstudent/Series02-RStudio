@@ -95,11 +95,17 @@ ggplot(nonuse, aes(x = PANU, y = SANU)) +
 ```
 
 
-
-
-
 - Give the regression equations: PANU = a * SANU + b and PANU = a * EENU + b
 
+```{r lm-sanu}
+lm_sanu <- lm(SANU ~ PANU, data=nonuse)
+summary(lm_sanu)
+coef(lm_sanu)
+slope <- coef(lm_sanu)[2]
+intercept <- coef(lm_sanu)[1]
+cat(regression equation)
+
+```
 
 
 - Summarize your results as you would do in your master’s thesis report, or as in a scientific article (e.g., What sentence will you write in the article explaining your result?).
@@ -180,6 +186,3 @@ Finally, some of you may want to go beyond the scope of this series with new que
 Can you predict the value of one variable from the others? (linear regression, logistic regression, etc.)
 Can you classify individuals based on their variables? (clustering, PCA, etc.)
 NOTE: These questions are more advanced, and I don’t want you to address them from a technical standpoint or provide code. But they give you an idea of what you can do with data mining techniques… provided you know why you want to do it. I invite you to think about the perspective these questions open up and, if you feel ready to do so, to write a short paragraph about it.
-
-
-

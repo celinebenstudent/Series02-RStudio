@@ -83,12 +83,12 @@ We do not predict a linear relationship but we do it because it was asked
 
 ```{r plot-sanu}
 library(ggplot2)
-ggplot(nonuse, aes(x = PANU, y = SANU)) +
+ggplot(nonuse, aes(x = SANU, y = PANU)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE, color = "blue") +
   # xlim(-100, 100) +
   # ylim(-100, 100) +
-  labs(title = "PANU vs SANU", x = "PANU (%)", y = "SANU (%)") +
+  labs(title = "SANU vs PANU", x = "PANU (%)", y = "SANU (%)") +
   theme_minimal()
        
        
@@ -98,13 +98,12 @@ ggplot(nonuse, aes(x = PANU, y = SANU)) +
 - Give the regression equations: PANU = a * SANU + b and PANU = a * EENU + b
 
 ```{r lm-sanu}
-lm_sanu <- lm(SANU ~ PANU, data=nonuse)
+lm_sanu <- lm(PANU ~ SANU, data=nonuse)
 summary(lm_sanu)
 coef(lm_sanu)
 slope <- coef(lm_sanu)[2]
 intercept <- coef(lm_sanu)[1]
-cat(regression equation)
-
+cat("Regression equation: SANU =", intercept, "+", slope, "* PANU\n")
 ```
 
 

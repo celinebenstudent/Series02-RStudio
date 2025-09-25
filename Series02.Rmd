@@ -23,7 +23,6 @@ Download the file NonUse.csv from the course Moodle.
 
 ```{r load data}
 nonuse <- read.csv("data/test_data/NonUse.csv", sep = ",", header = TRUE)
-
 head(nonuse)
 summary(nonuse)
 
@@ -32,12 +31,17 @@ summary(nonuse)
 
 This file contains measures of upper extremity nonuse:
 
-
 PANU: Proximal Arm Non Use
 SANU: Shoulder Antepulsion Non Use
 EENU: Elbow Extension Non Use
 
 In your notebook, make a clear description of the experiment, the variables and the data. Do not forget to give the units of each variable, and the range of possible values.
+
+| name |Description|unit|range
+|--|---------|--|--
+| PANU | Proximal Arm Non Use | % | 0-100
+| SANU | Shoulder Antepulsion Non Use | %   | 0-100
+| EENU | Elbow Extension Non Use | %  | 0-100 
 
 ## Corelation analysis
 Below are some questions to guide your analysis.

@@ -19,7 +19,7 @@ You want to know if there is a relationship between the nonuse of the proximal p
 ## The data
 As you will see, the data is far from perfect, but this is the reality of experimental data, especially in the case of clinical data.
 
-Download the file NonUse.csv from the course Moodle.
+- Download the file NonUse.csv from the course Moodle.
 
 ```{r load data}
 nonuse <- read.csv("data/test_data/NonUse.csv", sep = ",", header = TRUE)
@@ -39,7 +39,7 @@ This file contains measures of upper extremity nonuse:
     EENU: Elbow Extension Non Use
     
 
-In your notebook, make a clear description of the experiment, the variables and the data. Do not forget to give the units of each variable, and the range of possible values.
+- In your notebook, make a clear description of the experiment, the variables and the data. Do not forget to give the units of each variable, and the range of possible values.
 
 
 | name | Description | unit |range
@@ -54,6 +54,7 @@ Below are some questions to guide your analysis.
 
 - Is PANU correlated with SANU and/or EENU?
 
+
 We use a spearman correlation, because we do not have assumptions about the distribution of the data, and we do not assume a linear relationship between the variables.
 
 ```{r correlation-sanu}
@@ -61,7 +62,7 @@ cor.test(nonuse$PANU, nonuse$SANU, method = "spearman")
 ```
 
 
-Visualize the PANU-SANU relationship (and the PANU-EENU relationship)
+- Visualize the PANU-SANU relationship (and the PANU-EENU relationship)
 
 ```{r plot-sanu}
 library(ggplot2)
@@ -76,13 +77,35 @@ ggplot(nonuse, aes(x = PANU, y = SANU)) +
 ```
        
        
-Perform a linear regression for PANU-SANU (and for PANU-EENU)
+- Perform a linear regression for PANU-SANU (and for PANU-EENU)
 
-Give the regression equations: PANU = a * SANU + b and PANU = a * EENU + b
+We do not predict a linear relationship but we do it because it was asked 
 
-Summarize your results as you would do in your master’s thesis report, or as in a scientific article (e.g., What sentence will you write in the article explaining your result?).
+```{r plot-sanu}
+library(ggplot2)
+ggplot(nonuse, aes(x = PANU, y = SANU)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  # xlim(-100, 100) +
+  # ylim(-100, 100) +
+  labs(title = "PANU vs SANU", x = "PANU (%)", y = "SANU (%)") +
+  theme_minimal()
+       
+       
+```
 
-What are the limits of your analysis?
+
+
+
+
+- Give the regression equations: PANU = a * SANU + b and PANU = a * EENU + b
+
+
+
+- Summarize your results as you would do in your master’s thesis report, or as in a scientific article (e.g., What sentence will you write in the article explaining your result?).
+
+
+- What are the limits of your analysis?
 
 # Statistical tests: comparison of medians (or means?)
 In this series of exercises, you will explore how to compare two groups of data, using non-parametric tests (or parametric tests… if it makes sense to do so).

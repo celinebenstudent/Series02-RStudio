@@ -24,9 +24,9 @@ Download the file NonUse.csv from the course Moodle.
 This file contains measures of upper extremity nonuse:
 
 
--PANU: Proximal Arm Non Use
--SANU: Shoulder Antepulsion Non Use
--EENU: Elbow Extension Non Use
+PANU: Proximal Arm Non Use
+SANU: Shoulder Antepulsion Non Use
+EENU: Elbow Extension Non Use
 
 In your notebook, make a clear description of the experiment, the variables and the data. Do not forget to give the units of each variable, and the range of possible values.
 
@@ -69,7 +69,7 @@ This is a very classical question in clinical or sport research: does a treatmen
 
 To answer this question scientifically, measurements must be taken before and after treatment, and possibly later, in order to assess whether the effect is lasting or not.
 
-2.2.1 The data
+## The data
 Download the file PrePost.csv
 
 This file contains before/after measurements. The treatment is a rehabilitation training for individuals with cardiac conditions.
@@ -80,7 +80,7 @@ Make a table, with one row per variable, and the following columns:
 
 | Variable | Description | Unit | Possible values | Expected change |
 
-2.2.2 The analysis
+## The analysis
 You want to know if the treatment has an effect on one or more of the measured variables.
 
 Does the treatment have an effect?
@@ -93,17 +93,17 @@ Which graph illustrates the effect of the treatment?
 
 What sentence will you write in your thesis to explain your result?
 
-2.3 Testing some stereotypes
+# Testing some stereotypes
 Humans have stereotypes, some of them are probably true, some others are probably false (e.g., ref ).
 
 Here, we will test stereotypes about snorers… among others.
 
-2.3.1 The data
+## The data
 Download the file snore.txt
 
 This file contains anthropometric and qualitative measurements (1 person per line).
 
-2.3.2 The analysis
+## The analysis
 Do the data confirm the following stereotypes? Provide a reasoned answer (data, figure, result sentence) for each question.
 Are snorers fatter?
 Do snorers drink or smoke more?
@@ -111,7 +111,8 @@ Are men fatter?
 Do women smoke less?
 From a more general perspective:
 Are there any correlations between variables?
-3 Epilogue: beyond the scope of this series
+
+## Epilogue: beyond the scope of this series
 Finally, some of you may want to go beyond the scope of this series with new questions, such as:
 
 Can you predict the value of one variable from the others? (linear regression, logistic regression, etc.)

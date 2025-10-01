@@ -115,12 +115,43 @@ This file contains anthropometric and qualitative measurements (1 person per lin
 
 ## The analysis
 Do the data confirm the following stereotypes? Provide a reasoned answer (data, figure, result sentence) for each question.
+
+
 Are snorers fatter?
+
+    Result: Mean weight = 90.3 kg (snorers) vs 90.5 kg (non-snorers).
+
+    Answer: No, snorers are not fatter. Their average weight is almost the same.
+
 Do snorers drink or smoke more?
+
+    Alcohol: Snorers drink more (mean = 4.0 units) than non-snorers (2.4).
+
+    Smoking: Fewer snorers smoke (57%) than non-snorers (68%).
+
+    Answer: Snorers drink more, but they actually smoke less.
+
 Are men fatter?
+
+    Mean weight: Men = 90.8 kg, Women = 89.3 kg.
+
+    Answer: Yes, men are slightly fatter on average.
+
 Do women smoke less?
+
+    Smoking rate: Men = 72%, Women = 40%.
+
+    Answer: Yes, women smoke less than men.
+
 From a more general perspective:
+
 Are there any correlations between variables?
+
+    Strong positive correlation: Weight ↔ Height (r = 0.93).
+
+    Weak correlation: Weight with alcohol (r = 0.09, very small).
+
+    Answer: Yes, mainly between weight and height. Other correlations are weak.
 
 ## Epilogue: beyond the scope of this series
 Finally, some of you may want to go beyond the scope of this series with new questions, such as:

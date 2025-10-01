@@ -127,26 +127,92 @@ In this series of exercises, you will explore how to compare two groups of data,
 ## Make clear what is a statistical test, and when to use it.
 Below are some questions to guide your analysis. You can answer them in your notebook, with a short sentence for each question.
 
+
 What is a median? A mean?
+
+    Median: the middle value of ordered data (50% above, 50% below).
+    Mean: the arithmetic average of all values.
+
 What is a variance? A standard deviation?
+
+    Variance (σ²): average squared deviation from the mean.
+    Standard deviation (σ): square root of variance, shows average spread in original units.
+
 What is a normal distribution?
+
+    A symmetric, bell-shaped distribution defined by mean μ and variance σ².
+
 What is a statistical test?
+
+    A procedure to decide if observed data provide enough evidence against a null hypothesis.
+
 When to use a statistical test?
+
+    When you want to infer about a population parameter from sample data (e.g., mean difference, correlation).
+
 What is a parametric test? A non-parametric test?
+
+    Parametric: assumes data follow a known distribution (e.g., t-test, ANOVA).
+    Non-parametric: no distributional assumption, works with ranks (e.g., Mann-Whitney, Wilcoxon).
+
 What are the assumptions of parametric tests?
+
+    Normal distribution (or large n, CLT).
+    
+    Homogeneity of variance (equal spread between groups).
+    
+    Independence of observations.
+
 What are the assumptions of non-parametric tests?
+
+    Independence of observations.
+
+    Ordinal or continuous data.
+
+    Similar shapes of distributions if comparing medians.
+
 What is a p-value?
+
+    The probability of obtaining results at least as extreme as observed, assuming the null hypothesis is true.
+    
 What is the risk of error when using a statistical test?
+
+    Type I error (α): rejecting a true null hypothesis (false positive).
+    Type II error (β): failing to reject a false null hypothesis (false negative).
+
 What is the difference between a paired and an unpaired test?
+
+    Paired: compares repeated measures on the same subjects (e.g., before vs after).
+    Unpaired: compares independent groups (e.g., treatment vs control).
+
+
 You can use your favorite LLM, book or web site to answer these questions, but you have to provide at least one reference for each answer (book, article, URL, LLM prompt, etc.).
 
+    Prompt used on CHatGPT-5 plus : "Can you answer these questions in a direct and concise way, if possible by providing references to each question ?"
+    
+    
+ [Download the full reference list](statistics_references.md)
+ 
+ 
 ## Effect of treatment over time
+
 This is a very classical question in clinical or sport research: does a treatment-training have an effect over time?
 
 To answer this question scientifically, measurements must be taken before and after treatment, and possibly later, in order to assess whether the effect is lasting or not.
 
 ## The data
+
 Download the file PrePost.csv
+
+```{r load data}
+prepost <- read.csv("data/test_data/PrePost.csv", sep = ",", header = TRUE)
+head(prepost)
+str(prepost)
+summary(prepost)
+
+
+```
+
 
 This file contains before/after measurements. The treatment is a rehabilitation training for individuals with cardiac conditions.
 
@@ -154,20 +220,48 @@ Before going further, you have to make clear what are the measured variables. Wh
 
 Make a table, with one row per variable, and the following columns:
 
+
 | Variable | Description | Unit | Possible values | Expected change |
+|----------------|-------------------------------|------|----------------|------------------|
+| Perf | Cardiac performance measure | Bpm | 40-200 | Increase |
+| time |Measurement moment relative to rehabilitation | N/A | Before, After| N/A |
+
 
 ## The analysis
 You want to know if the treatment has an effect on one or more of the measured variables.
 
+
 Does the treatment have an effect?
+
+    Yes, if the “After” values differ significantly from the “Before” values.
 
 What comparison are you going to make?
 
+    Compare the same individuals’ performance “Before” vs “After” rehabilitation.
+
 Which test will you use? Parametric or non-parametric?
+
+    If the differences are approximately normally distributed → use a paired t-test (parametric).
+    If not (or small sample size, skewed data) → use the Wilcoxon signed-rank test (non-parametric).
 
 Which graph illustrates the effect of the treatment?
 
+
+    Boxplot or line plot (paired plot):
+
+    Boxplot → shows median, variability, before vs after.
+    Paired line plot → each patient’s trajectory, very clear visually.
+
 What sentence will you write in your thesis to explain your result?
+
+
+    If significant improvement:
+
+    After rehabilitation, patients showed a significant improvement in cardiac performance, with post-treatment values being higher compared to pre-treatment (p < 0.05).
+
+    If no significant effect:
+
+    No significant change in cardiac performance was observed between the pre- and post-rehabilitation measurements (p > 0.05).
 
 # Testing some stereotypes
 Humans have stereotypes, some of them are probably true, some others are probably false (e.g., ref ).

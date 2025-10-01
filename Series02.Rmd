@@ -153,6 +153,10 @@ Before going further, you have to make clear what are the measured variables. Wh
 Make a table, with one row per variable, and the following columns:
 
 | Variable | Description | Unit | Possible values | Expected change |
+|----------------|-------------------------------|------|----------------|------------------|
+| Perf | Cardiac performance measure | Bpm | 40-200 | Increase |
+| time |Measurement moment relative to rehabilitation | N/A | Before, After| N/A |
+
 
 ## The analysis
 You want to know if the treatment has an effect on one or more of the measured variables.

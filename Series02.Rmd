@@ -101,6 +101,16 @@ Here, we will test stereotypes about snorers… among others.
 ## The data
 Download the file snore.txt
 
+```{r load data}
+
+snore <- read.table("data/test_data/snore.txt", header = TRUE)
+str(snore)
+summary(snore)
+head(snore)
+
+```
+
+
 This file contains anthropometric and qualitative measurements (1 person per line).
 
 ## The analysis

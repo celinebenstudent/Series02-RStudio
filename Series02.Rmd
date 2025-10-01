@@ -204,7 +204,7 @@ To answer this question scientifically, measurements must be taken before and af
 
 Download the file PrePost.csv
 
-```{r load data}
+```{r load data-2}
 prepost <- read.csv("data/test_data/PrePost.csv", sep = ",", header = TRUE)
 head(prepost)
 str(prepost)
@@ -271,7 +271,7 @@ Here, we will test stereotypes about snorers… among others.
 ## The data
 Download the file snore.txt
 
-```{r load data}
+```{r load data-3}
 
 snore <- read.table("data/test_data/snore.txt", header = TRUE)
 str(snore)

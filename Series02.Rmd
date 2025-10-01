@@ -127,11 +127,13 @@ You can use your favorite LLM, book or web site to answer these questions, but y
     
 
 ## Effect of treatment over time
+
 This is a very classical question in clinical or sport research: does a treatment-training have an effect over time?
 
 To answer this question scientifically, measurements must be taken before and after treatment, and possibly later, in order to assess whether the effect is lasting or not.
 
 ## The data
+
 Download the file PrePost.csv
 
 ```{r load data}

@@ -114,11 +114,10 @@ You can use your favorite LLM, book or web site to answer these questions, but y
 
     Prompt used on CHatGPT-5 plus : "Can you answer these questions in a direct and concise way, if possible by providing references to each question ?"
     
-    You can consult the full reference list here:  
-[Statistics References](sandbox:/mnt/data/statistics_references.md)
-
     
-
+ [Download the full reference list](statistics_references.md)
+ 
+ 
 ## Effect of treatment over time
 
 This is a very classical question in clinical or sport research: does a treatment-training have an effect over time?

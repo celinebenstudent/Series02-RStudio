@@ -54,7 +54,6 @@ Below are some questions to guide your analysis.
 
 - Is PANU correlated with SANU and/or EENU?
 
-
 We use a spearman correlation, because we do not have assumptions about the distribution of the data, and we do not assume a linear relationship between the variables.
 
 ```{r correlation-sanu}
@@ -64,7 +63,7 @@ cor.test(nonuse$PANU, nonuse$SANU, method = "spearman")
 
 - Visualize the PANU-SANU relationship (and the PANU-EENU relationship)
 
-```{r plot-sanu}
+```{r plot-panu}
 library(ggplot2)
 ggplot(nonuse, aes(x = PANU, y = SANU)) +
   geom_point() +
@@ -72,7 +71,6 @@ ggplot(nonuse, aes(x = PANU, y = SANU)) +
   ylim(-100, 100) +
   labs(title = "PANU vs SANU", x = "PANU (%)", y = "SANU (%)") +
   theme_minimal()
-       
        
 ```
        

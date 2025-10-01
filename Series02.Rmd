@@ -19,31 +19,107 @@ You want to know if there is a relationship between the nonuse of the proximal p
 ## The data
 As you will see, the data is far from perfect, but this is the reality of experimental data, especially in the case of clinical data.
 
-Download the file NonUse.csv from the course Moodle.
+- Download the file NonUse.csv from the course Moodle.
 
-This file contains measures of upper extremity nonuse:
+```{r load data}
+nonuse <- read.csv("data/test_data/NonUse.csv", sep = ",", header = TRUE)
+head(nonuse)
+summary(nonuse)
+
+```
 
 
-PANU: Proximal Arm Non Use
-SANU: Shoulder Antepulsion Non Use
-EENU: Elbow Extension Non Use
+-This file contains measures of upper extremity nonuse:
 
-In your notebook, make a clear description of the experiment, the variables and the data. Do not forget to give the units of each variable, and the range of possible values.
+
+    PANU: Proximal Arm Non Use
+
+    SANU: Shoulder Antepulsion Non Use
+
+    EENU: Elbow Extension Non Use
+    
+
+- In your notebook, make a clear description of the experiment, the variables and the data. Do not forget to give the units of each variable, and the range of possible values.
+
+
+| name | Description | unit |range
+|--|---------|--|--
+| PANU | Proximal Arm Non Use | % | 0-100
+| SANU | Shoulder Antepulsion Non Use | %   | 0-100
+| EENU | Elbow Extension Non Use | %  | 0-100 
+
 
 ## Corelation analysis
 Below are some questions to guide your analysis.
 
-Is PANU correlated with SANU and/or EENU?
+- Is PANU correlated with SANU and/or EENU?
 
-Visualize the PANU-SANU relationship (and the PANU-EENU relationship)
+    We use a spearman correlation, because we do not have assumptions about the distribution of the data, and we do not assume a linear relationship between the variables.
 
-Perform a linear regression for PANU-SANU (and for PANU-EENU)
+```{r correlation-sanu}
+cor.test(nonuse$PANU, nonuse$SANU, method = "spearman")
+```
 
-Give the regression equations: PANU = a * SANU + b and PANU = a * EENU + b
 
-Summarize your results as you would do in your master’s thesis report, or as in a scientific article (e.g., What sentence will you write in the article explaining your result?).
+- Visualize the PANU-SANU relationship (and the PANU-EENU relationship)
 
-What are the limits of your analysis?
+```{r plot-panu}
+library(ggplot2)
+ggplot(nonuse, aes(x = PANU, y = SANU)) +
+  geom_point() +
+  xlim(-100, 100) +
+  ylim(-100, 100) +
+  labs(title = "PANU vs SANU", x = "PANU (%)", y = "SANU (%)") +
+  theme_minimal()
+       
+```
+       
+       
+- Perform a linear regression for PANU-SANU (and for PANU-EENU)
+
+    We do not predict a linear relationship but we do it because it was asked. 
+
+```{r plot-sanu}
+library(ggplot2)
+ggplot(nonuse, aes(x = SANU, y = PANU)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  # xlim(-100, 100) +
+  # ylim(-100, 100) +
+  labs(title = "SANU vs PANU", x = "PANU (%)", y = "SANU (%)") +
+  theme_minimal()
+       
+       
+```
+
+
+- Give the regression equations: PANU = a * SANU + b and PANU = a * EENU + b
+
+```{r lm-sanu}
+lm_sanu <- lm(PANU ~ SANU, data=nonuse)
+summary(lm_sanu)
+coef(lm_sanu)
+slope <- coef(lm_sanu)[2]
+intercept <- coef(lm_sanu)[1]
+cat("Regression equation: SANU =", intercept, "+", slope, "* PANU\n")
+```
+
+
+- Summarize your results as you would do in your master’s thesis report, or as in a scientific article (e.g., What sentence will you write in the article explaining your result?).
+
+
+ Correlation :
+
+    Spearman’s rank correlation indicated a weak but significant positive association between PANU and SANU (ρ = 0.22, p = 0.002), suggesting that greater shoulder non-use tends to be associated with greater proximal arm non-use.
+
+ Regression :
+
+    However, linear regression analysis showed that SANU did not significantly predict PANU (β = 0.10, R² = 0.009, p = 0.17), indicating that shoulder non-use accounts for less than 1% of the variance in proximal arm non-use.
+
+
+- What are the limits of your analysis?
+
+    The findings should be interpreted cautiously. While a weak but statistically significant correlation was identified between PANU and SANU, the regression analysis failed to establish a predictive relationship, accounting for less than 1% of the variance. Such limitations may stem from the small sample size, the presence of missing data, and the multifactorial nature of upper-limb non-use, which is likely influenced by additional clinical variables not considered in this model.
 
 # Statistical tests: comparison of medians (or means?)
 In this series of exercises, you will explore how to compare two groups of data, using non-parametric tests (or parametric tests… if it makes sense to do so).
@@ -118,6 +194,3 @@ Finally, some of you may want to go beyond the scope of this series with new que
 Can you predict the value of one variable from the others? (linear regression, logistic regression, etc.)
 Can you classify individuals based on their variables? (clustering, PCA, etc.)
 NOTE: These questions are more advanced, and I don’t want you to address them from a technical standpoint or provide code. But they give you an idea of what you can do with data mining techniques… provided you know why you want to do it. I invite you to think about the perspective these questions open up and, if you feel ready to do so, to write a short paragraph about it.
-
-
-

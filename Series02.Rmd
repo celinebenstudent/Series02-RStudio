@@ -158,7 +158,10 @@ Finally, some of you may want to go beyond the scope of this series with new que
 
 Can you predict the value of one variable from the others? (linear regression, logistic regression, etc.)
 Can you classify individuals based on their variables? (clustering, PCA, etc.)
+
 NOTE: These questions are more advanced, and I don’t want you to address them from a technical standpoint or provide code. But they give you an idea of what you can do with data mining techniques… provided you know why you want to do it. I invite you to think about the perspective these questions open up and, if you feel ready to do so, to write a short paragraph about it.
 
+
+    We can use regression to predict health outcomes from risk factors, or clustering to discover hidden groups of patients with similar profiles. These methods don’t just give numbers — they help us see patterns, anticipate problems, and design better interventions. The key is always to connect the analysis to a meaningful goal, so the statistics serve a purpose and not just curiosity.
 
 

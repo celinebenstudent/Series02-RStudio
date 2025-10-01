@@ -152,6 +152,7 @@ Before going further, you have to make clear what are the measured variables. Wh
 
 Make a table, with one row per variable, and the following columns:
 
+
 | Variable | Description | Unit | Possible values | Expected change |
 |----------------|-------------------------------|------|----------------|------------------|
 | Perf | Cardiac performance measure | Bpm | 40-200 | Increase |
@@ -161,15 +162,38 @@ Make a table, with one row per variable, and the following columns:
 ## The analysis
 You want to know if the treatment has an effect on one or more of the measured variables.
 
+
 Does the treatment have an effect?
+
+    Yes, if the “After” values differ significantly from the “Before” values.
 
 What comparison are you going to make?
 
+    Compare the same individuals’ performance “Before” vs “After” rehabilitation.
+
 Which test will you use? Parametric or non-parametric?
+
+    If the differences are approximately normally distributed → use a paired t-test (parametric).
+    If not (or small sample size, skewed data) → use the Wilcoxon signed-rank test (non-parametric).
 
 Which graph illustrates the effect of the treatment?
 
+
+    Boxplot or line plot (paired plot):
+
+    Boxplot → shows median, variability, before vs after.
+    Paired line plot → each patient’s trajectory, very clear visually.
+
 What sentence will you write in your thesis to explain your result?
+
+
+    If significant improvement:
+
+    After rehabilitation, patients showed a significant improvement in cardiac performance, with post-treatment values being higher compared to pre-treatment (p < 0.05).
+
+    If no significant effect:
+
+    No significant change in cardiac performance was observed between the pre- and post-rehabilitation measurements (p > 0.05).
 
 # Testing some stereotypes
 Humans have stereotypes, some of them are probably true, some others are probably false (e.g., ref ).

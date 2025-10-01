@@ -56,34 +56,28 @@ What is a median? A mean?
 
     Median: the middle value of ordered data (50% above, 50% below).
     Mean: the arithmetic average of all values.
-     Ref: [Moore et al., Introduction to the Practice of Statistics, 2017]
 
 What is a variance? A standard deviation?
 
     Variance (σ²): average squared deviation from the mean.
     Standard deviation (σ): square root of variance, shows average spread in original units.
-    Ref: [Freedman et al., Statistics, 2007]
 
 What is a normal distribution?
 
     A symmetric, bell-shaped distribution defined by mean μ and variance σ².
-    Ref: [Casella & Berger, Statistical Inference, 2002]
 
 What is a statistical test?
 
     A procedure to decide if observed data provide enough evidence against a null hypothesis.
-    Ref: [Fisher, Statistical Methods for Research Workers, 1925]
 
 When to use a statistical test?
 
     When you want to infer about a population parameter from sample data (e.g., mean difference, correlation).
-    Ref: [Altman, Practical Statistics for Medical Research, 1990]
 
 What is a parametric test? A non-parametric test?
 
     Parametric: assumes data follow a known distribution (e.g., t-test, ANOVA).
     Non-parametric: no distributional assumption, works with ranks (e.g., Mann-Whitney, Wilcoxon).
-    Ref: [Conover, Practical Nonparametric Statistics, 1999]
 
 What are the assumptions of parametric tests?
 
@@ -92,7 +86,6 @@ What are the assumptions of parametric tests?
     Homogeneity of variance (equal spread between groups).
     
     Independence of observations.
-    Ref: [Field, Discovering Statistics Using R, 2012]
 
 What are the assumptions of non-parametric tests?
 
@@ -101,29 +94,29 @@ What are the assumptions of non-parametric tests?
     Ordinal or continuous data.
 
     Similar shapes of distributions if comparing medians.
-    Ref: [Conover, 1999]
 
 What is a p-value?
 
     The probability of obtaining results at least as extreme as observed, assuming the null hypothesis is true.
-    Ref: [Wasserstein & Lazar, The ASA Statement on p-Values, 2016]
     
 What is the risk of error when using a statistical test?
 
     Type I error (α): rejecting a true null hypothesis (false positive).
     Type II error (β): failing to reject a false null hypothesis (false negative).
-    Ref: [Neyman & Pearson, 1933]
 
 What is the difference between a paired and an unpaired test?
 
     Paired: compares repeated measures on the same subjects (e.g., before vs after).
     Unpaired: compares independent groups (e.g., treatment vs control).
-    Ref: [Altman, 1990]
 
 
 You can use your favorite LLM, book or web site to answer these questions, but you have to provide at least one reference for each answer (book, article, URL, LLM prompt, etc.).
 
     Prompt used on CHatGPT-5 plus : "Can you answer these questions in a direct and concise way, if possible by providing references to each question ?"
+    
+    You can consult the full reference list here:  
+[Statistics References](sandbox:/mnt/data/statistics_references.md)
+
     
 
 ## Effect of treatment over time

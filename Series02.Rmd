@@ -119,6 +119,8 @@ cat("Regression equation: SANU =", intercept, "+", slope, "* PANU\n")
 
 - What are the limits of your analysis?
 
+    The findings should be interpreted cautiously. While a weak but statistically significant correlation was identified between PANU and SANU, the regression analysis failed to establish a predictive relationship, accounting for less than 1% of the variance. Such limitations may stem from the small sample size, the presence of missing data, and the multifactorial nature of upper-limb non-use, which is likely influenced by additional clinical variables not considered in this model.
+
 # Statistical tests: comparison of medians (or means?)
 In this series of exercises, you will explore how to compare two groups of data, using non-parametric tests (or parametric tests… if it makes sense to do so).
 

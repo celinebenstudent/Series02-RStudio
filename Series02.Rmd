@@ -134,6 +134,16 @@ To answer this question scientifically, measurements must be taken before and af
 ## The data
 Download the file PrePost.csv
 
+```{r load data}
+prepost <- read.csv("data/test_data/PrePost.csv", sep = ",", header = TRUE)
+head(prepost)
+str(prepost)
+summary(prepost)
+
+
+```
+
+
 This file contains before/after measurements. The treatment is a rehabilitation training for individuals with cardiac conditions.
 
 Before going further, you have to make clear what are the measured variables. What do they measure? What are the units? What are the possible values? What are the expected changes over rehabilitation.
